@@ -1,6 +1,5 @@
 ﻿using AddressBookModel;
 using System;
-using Newtonsoft.Json.Linq;
 using System.Linq;
 
 namespace AddressBookBusinessLayer
@@ -9,13 +8,13 @@ namespace AddressBookBusinessLayer
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            
         }
 
         public User SelectedUser { get; set; }
 
         //HELPER METHODS
-        public bool UsernameAndPasswordNotNull(string username, string password) =>  username != null && password !=null ? true : false;
+        public bool UsernameAndPasswordNotNull(string username, string password) =>  username != null && password !=null;
         public bool UserExists(string username)
         {
             using (var db = new AddressBookDataContext())
@@ -30,9 +29,7 @@ namespace AddressBookBusinessLayer
                 return db.Users.Where(u => u.Username == username).Select(u => u.UserPassword).FirstOrDefault() == password;
             }
         }
-
         bool PasswordsMatch(string passwordOne, string passwordTwo) => passwordOne == passwordTwo;
-
         public void SetSelectedUser(string username)
         {
             using (var db = new AddressBookDataContext())
@@ -49,7 +46,7 @@ namespace AddressBookBusinessLayer
 
                 if (UsernameAndPasswordNotNull(username, password))
                 {
-                    if (UserExists(username) == false)
+                    if (!UserExists(username))
                     {
                         User user = new User
                         {
@@ -107,13 +104,18 @@ namespace AddressBookBusinessLayer
         }
 
         //LOGIN TO ACCOUNT
-        public void Login(string username, string password)
+        public string Login(string username, string password)
         {
             using (var db = new AddressBookDataContext())
             {
                 if (UserExists(username) && PasswordCheck(username, password))
                 {
                     SetSelectedUser(username);
+                    return "Login Successful";
+                }
+                else
+                {
+                    return "Unsuccessful login attempt";
                 }
             }
         }

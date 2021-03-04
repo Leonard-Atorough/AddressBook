@@ -10,10 +10,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBookBusinessLayer", 
 		{53306B7C-B6E7-4C88-A782-D158B04C013D} = {53306B7C-B6E7-4C88-A782-D158B04C013D}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AddressBookTestLayer", "AddressBookTestLayer\AddressBookTestLayer.csproj", "{17612085-42B1-49D9-B1DD-EF7F15517D26}"
-	ProjectSection(ProjectDependencies) = postProject
-		{504D6288-3E14-4DB8-AF49-5CEA410E7271} = {504D6288-3E14-4DB8-AF49-5CEA410E7271}
-	EndProjectSection
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AddressBookTest", "AddressBookTest\AddressBookTest.csproj", "{FE40FB46-F663-44B6-A020-8FEE87CE7ABC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +26,10 @@ Global
 		{504D6288-3E14-4DB8-AF49-5CEA410E7271}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{504D6288-3E14-4DB8-AF49-5CEA410E7271}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{504D6288-3E14-4DB8-AF49-5CEA410E7271}.Release|Any CPU.Build.0 = Release|Any CPU
-		{17612085-42B1-49D9-B1DD-EF7F15517D26}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{17612085-42B1-49D9-B1DD-EF7F15517D26}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{17612085-42B1-49D9-B1DD-EF7F15517D26}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{17612085-42B1-49D9-B1DD-EF7F15517D26}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE40FB46-F663-44B6-A020-8FEE87CE7ABC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE40FB46-F663-44B6-A020-8FEE87CE7ABC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE40FB46-F663-44B6-A020-8FEE87CE7ABC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE40FB46-F663-44B6-A020-8FEE87CE7ABC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
