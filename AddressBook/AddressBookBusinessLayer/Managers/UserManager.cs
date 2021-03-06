@@ -4,12 +4,8 @@ using System.Linq;
 
 namespace AddressBookBusinessLayer
 {
-    public class UserManager
+    public class UserManager : BaseManager
     {
-        static void Main(string[] args)
-        {
-            
-        }
 
         public User SelectedUser { get; set; }
 
@@ -66,6 +62,7 @@ namespace AddressBookBusinessLayer
                 {
                     throw new Exception("Username and password cannot be null");
                 }
+                db.SaveChanges();
             }
         }
 
@@ -77,6 +74,8 @@ namespace AddressBookBusinessLayer
                 SelectedUser.Username = newUsername;
                 SelectedUser.Email = email;
                 SelectedUser.PhoneNo = phoneNo;
+
+                db.SaveChanges();
             }
         }
 
@@ -100,6 +99,7 @@ namespace AddressBookBusinessLayer
                 {
                     throw new Exception("The old password is incorrect");
                 }
+                db.SaveChanges();
             }
         }
 
@@ -129,6 +129,8 @@ namespace AddressBookBusinessLayer
                 {
                     db.Users.Remove(SelectedUser);
                 }
+
+                db.SaveChanges();
             }
         }
     }
